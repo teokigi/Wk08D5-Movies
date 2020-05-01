@@ -23,15 +23,15 @@ export default {
 <style>
 
 body {
-  font-family: 'Source Serif Pro', serif;
-
-  background-color: #E1E5F2;
-  background-position: center;
-  width: 100%;
-  margin: 0 auto;
-  color: #1F7A8C;
+    box-sizing:border-box;
+    font-family: 'Source Serif Pro', serif;
+    background-color: #E1E5F2;
+    background-position: center;
+    width: 100%;
+    margin: 0 auto;
+    color: #1F7A8C;
+    overflow-x:hidden;
 }
-
 h1, h2, h3 {
   color: #022B3A;
   font-family: 'Skranji', cursive;
