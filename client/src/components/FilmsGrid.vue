@@ -3,13 +3,14 @@
 
           <film-grid-item v-if="!selectedFilm" v-for="(film, index) in films" :key="index" :film="film" />
 
-    <film-detail v-if="film" :film="film" />
+    <film-detail v-if="selectedFilm" :film="selectedFilm" />
   </div>
 </template>
 
 <script>
 import FilmGridItem from './FilmGridItem'
 import MoviesService from '@/services/MoviesService.js'
+import FilmDetail from '@/components/FilmDetail.vue'
 import {eventBus} from '@/main.js'
 export default {
 
@@ -31,7 +32,8 @@ export default {
     },
 
     components: {
-        'film-grid-item': FilmGridItem
+        'film-grid-item': FilmGridItem,
+        'film-detail':FilmDetail
     },
 
     methods:{
