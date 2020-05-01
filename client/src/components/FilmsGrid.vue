@@ -34,8 +34,8 @@ export default {
 
         eventBus.$on('delete-film',id =>{
             MoviesService.deleteMovie(id)
-            const index = this.films.findIndex(film => film._id === _id);
-            this.games.splice(index,1);
+            const index = this.films.findIndex(film => film._id === id);
+            this.films.splice(index,1);
         })
     },
 
