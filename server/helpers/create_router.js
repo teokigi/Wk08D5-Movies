@@ -16,6 +16,12 @@ const createRouter = function(movCol){
         })
     });
 
+    router.get('/:id',function(req,res){
+        const id = req.params.id;
+        movCol.findOne({_id:ObjectID(id)})
+        .then(doc => res.json(doc))
+    });
+
     return router;
 }
 
