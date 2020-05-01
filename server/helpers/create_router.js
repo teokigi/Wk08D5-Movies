@@ -21,7 +21,7 @@ const createRouter = function(movCol){
         movCol.findOne({_id:ObjectID(id)})
         .then(doc => res.json(doc))
     });
-
+    //Tested in insomnia, Gantz was removed. ==> reseeding after.
     router.delete('/:id',function(req,res){
         const id = req.params.id;
         movCol.deleteOne({_id:ObjectID(id)})
