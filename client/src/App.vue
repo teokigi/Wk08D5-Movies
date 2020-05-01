@@ -10,11 +10,13 @@ import FilmsGrid from '@/components/FilmsGrid';
 import MovieHeader from '@/components/MovieHeader';
 
 export default {
-  name: 'app',
-  components: {
-    'films-grid': FilmsGrid,
-    'movie-header': MovieHeader
-  }
+
+    name: 'app',
+
+    components: {
+        'films-grid': FilmsGrid,
+        'movie-header': MovieHeader
+    }
 }
 </script>
 
@@ -22,7 +24,7 @@ export default {
 
 body {
   font-family: 'Source Serif Pro', serif;
-  
+
   background-color: #E1E5F2;
   background-position: center;
   width: 100%;
