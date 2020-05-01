@@ -29,6 +29,8 @@ export default {
             MoviesService.getMovie(id)
             .then(Film => this.selectedFilm = Film)
         })
+
+        eventBus.$on('de-select-film', film => this.selectedFilm = null)
     },
 
     components: {
