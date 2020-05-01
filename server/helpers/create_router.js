@@ -1,5 +1,5 @@
 const express = require('express');
-const ObjectID = requrie('mongodb').ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 
 const createRouter = function(movCol){
 
@@ -7,7 +7,7 @@ const createRouter = function(movCol){
 
     router.get('/',function(req,res){
         movCol.find().toArray()
-        .then(docs => red.json(docs))
+        .then(docs => res.json(docs))
         .catch((error)=>{
             console.error(error);
             res.status(500);

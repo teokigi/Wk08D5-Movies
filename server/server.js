@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-MongoClient.connect('mongodbL//localhost:27017')
+MongoClient.connect('mongodb://localhost:27017')
 .then((client)=>{
     const db = client.db('movies_hub');
     const moviesCollection = db.collection('movies');
@@ -18,4 +18,4 @@ MongoClient.connect('mongodbL//localhost:27017')
 
 app.listen(3000,function(){
     console.log(`listening on port ${this.address().port}`);
-}
+});
