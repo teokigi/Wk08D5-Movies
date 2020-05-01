@@ -1,31 +1,38 @@
 <template lang="html">
-<div class="film-card">
-  <h2>{{film.title}} </h2>
-  <p><span class="film-key">Genre: </span>{{film.Genre}}  </p>
-  <p><span class="film-key">Rating: </span>{{film.rating}}  </p>
-  <p><span class="film-key">Release Date: </span>{{film.release_date}}  </p>
-  <p><span class="film-key">Running time: </span>{{film.runtime}}   </p>
+    <div class="film-card">
+      <h2>{{film.title}} </h2>
+      <p><span class="film-key">Genre: </span>{{film.Genre}}  </p>
+      <p><span class="film-key">Rating: </span>{{film.rating}}  </p>
+      <p><span class="film-key">Release Date: </span>{{film.release_date}}  </p>
+      <p><span class="film-key">Running time: </span>{{film.runtime}}   </p>
 
-  <button type="button" class="action-btn" v-on:click="deleteFilm">Delete</button>
-  <button type="button" class="action-btn" v-on:click="selectFilm">Show Details</button>
+      <button type="button" class="action-btn" v-on:click="deleteFilm">Delete</button>
+      <button type="button" class="action-btn" v-on:click="selectFilm">Show Details</button>
 </div>
 </template>
 
 <script>
 
-export default {
-  name: 'film-card',
-  props: ['film'],
-  methods: {
-    deleteFilm(){
-        console.log('Delete Button pressed');
-      // TODO: Code deleteFilm method
-    },
-    selectFilm() {
-        console.log('Select film clicked');
-      //TODO: Code film Selected Method
-    }
-  }
+    import MoviesService from '@/services/MoviesService.js';
+    import {eventBus} from '@/main.js';
+
+    export default {
+
+      name: 'film-card',
+
+      props: ['film'],
+
+      methods: {
+        deleteFilm(){
+            console.log('Delete Button pressed');
+          // TODO: Code deleteFilm method
+        },
+        selectFilm() {
+            console.log('Select film clicked');
+          //TODO: Code film Selected Method
+          eventBus.$emit('select-film', this.film._id)
+        }
+      }
 }
 </script>
 
