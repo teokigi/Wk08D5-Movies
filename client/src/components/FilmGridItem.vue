@@ -25,11 +25,10 @@
       methods: {
         deleteFilm(){
             console.log('Delete Button pressed');
-          // TODO: Code deleteFilm method
+            eventBus.$emit('delete-film', this.film._id)
         },
         selectFilm() {
             console.log('Select film clicked');
-          //TODO: Code film Selected Method
           eventBus.$emit('select-film', this.film._id)
         }
       }
