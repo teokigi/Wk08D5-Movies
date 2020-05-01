@@ -11,7 +11,7 @@ export default{
     getMovie(id){
         return fetch(baseUrl + id)
         .then(res =>res.json())
-    }
+    },
     //delete 1
     deleteMovie(id){
         return fetch(baseUrl + id, {Method: "DELETE"})
