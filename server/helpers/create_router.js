@@ -15,7 +15,7 @@ const createRouter = function(movCol){
 
         })
     });
-
+    //Tested in Insomnia, with Gantz. success
     router.get('/:id',function(req,res){
         const id = req.params.id;
         movCol.findOne({_id:ObjectID(id)})
