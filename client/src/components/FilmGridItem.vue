@@ -18,9 +18,11 @@ export default {
   props: ['film'],
   methods: {
     deleteFilm(){
+        console.log('Delete Button pressed');
       // TODO: Code deleteFilm method
     },
     selectFilm() {
+        console.log('Select film clicked');
       //TODO: Code film Selected Method
     }
   }
