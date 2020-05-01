@@ -22,6 +22,12 @@ const createRouter = function(movCol){
         .then(doc => res.json(doc))
     });
 
+    router.delete('/:id',function(req,res){
+        const id = req.params.id;
+        movCol.deleteOne({_id:ObjectID(id)})
+        .then(doc => res.json(doc))
+    });
+
     return router;
 }
 
