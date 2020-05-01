@@ -2,28 +2,27 @@
 
 ## Project setup
 ```
+in server/
+npm install
+npm install -D nodemon
+npm install cors mongodb body-parser express
+npm run seeds
+in client/
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### to run during development
 ```
+3 terminals required for running background services:
+mongod
+in server/
+npm run server:dev
+in client/
 npm run serve
+in web browser:
+localhost:8080
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
