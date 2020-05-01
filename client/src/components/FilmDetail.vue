@@ -7,6 +7,7 @@
       <h2>Release Date: {{film.release_date}}</h2>
       <h2>Running time: {{film.runtime}}</h2>
       <h2>Crew:<ul><li>Director: {{film.crew.director}}</li><li>Producer: {{film.crew.producer}}</li></ul></h2>
+      <h3>Summary:  {{film.summary}} </h3>
 
   </div>
 </template>
@@ -32,9 +33,9 @@ export default {
 <style lang="css" scoped>
 .filmTitle{
     font-family:impact;
-    letter-spacing:30px;
+    letter-spacing:20px;
     text-transform: uppercase;
-    font-size:70px;
+    font-size:60px;
     text-shadow:8px 5px 10px black;
 }
 .action-btn {
