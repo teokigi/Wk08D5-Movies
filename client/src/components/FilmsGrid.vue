@@ -1,21 +1,33 @@
 <template lang="html">
   <div class="film-wrapper">
-    <film-grid-item v-for="(film, index) in films" :key="index" :film="film" />
+
+          <film-grid-item v-if="!selectedFilm" v-for="(film, index) in films" :key="index" :film="film" />
+
+    <film-detail v-if="film" :film="film" />
   </div>
 </template>
 
 <script>
 import FilmGridItem from './FilmGridItem'
+import MoviesService from '@/services/MoviesService.js'
+import {eventBus} from '@/main.js'
 export default {
 
     data(){
         return {
-          films: []
+          films: [],
+          selectedFilm: null
         };
     },
 
     mounted(){
-        this.getFilms();
+        MoviesService.getMovies()
+        .then(films => this.films = films),
+
+        eventBus.$on('select-film',id =>{
+            MoviesService.getMovie(id)
+            .then(Film => this.selectedFilm = Film)
+        })
     },
 
     components: {
