@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="film-wrapper">
 
-          <film-grid-item v-if="!selectedFilm" v-for="(film, index) in films" :key="index" :film="film" />
+    <film-grid-item v-if="!selectedFilm" v-for="(film, index) in films" :key="index" :film="film" />
 
     <film-detail v-if="selectedFilm" :film="selectedFilm" />
   </div>
@@ -42,17 +42,7 @@ export default {
     components: {
         'film-grid-item': FilmGridItem,
         'film-detail':FilmDetail
-    },
-
-    methods:{
-        getFilms(){
-            fetch("http://localhost:3000/api/movies/")
-            .then(res=>res.json())
-            .then(resData => this.films = resData)
-
-        }
     }
-
 }
 </script>
 
