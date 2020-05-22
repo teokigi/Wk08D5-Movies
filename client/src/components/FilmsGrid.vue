@@ -27,7 +27,7 @@ export default {
 
         eventBus.$on('select-film',id =>{
             MoviesService.getMovie(id)
-            .then(Film => this.selectedFilm = Film)
+            .then(filmFromServer => this.selectedFilm = filmFromServer)
         })
 
         eventBus.$on('de-select-film', film => this.selectedFilm = null)
